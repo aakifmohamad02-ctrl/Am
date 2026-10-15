@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AM Creative | Creative Gifts & Printing</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="#home" class="logo">AM<span>Creative</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#categories">Categories</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" onclick="openCart()">🛒 Cart <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+
+      <!-- Left Side: Text -->
+      <div class="hero-content">
+
+        <p class="welcome">WELCOME TO</p>
+
+        <h1>
+          <span>AM</span> Creative
+        </h1>
+
+        <p class="hero-description">
+          Custom Gifts &nbsp; • &nbsp;
+          Personalized Products &nbsp; • &nbsp;
+          Unique Designs
+        </p>
+
+        <h2>
+          Turn Your Ideas<br>
+          Into Beautiful Creations...
+        </h2>
+
+        <a href="#products" class="shop-btn">
+          Shop Now →
+        </a>
+
+      </div>
+
+      <!-- Right Side: Image -->
+      <div class="hero-image">
+
+        <img src="/images/head.png" alt="AM Creative Personalized Gifts">
+
+      </div>
+
+    </section>
+
+
+    <section class="category-section" id="categories">
+      <div class="section-heading">
+        <p class="eyebrow">EXPLORE</p>
+        <h2>Shop by Category</h2>
+        <p>Choose a category to discover our products.</p>
+      </div>
+      <div class="category-list" id="categoryList">
+        <button class="category active" data-category="all">All Products</button>
+        <button class="category" data-category="mugs">Mugs Printing</button>
+        <button class="category" data-category="frames">Photo Framing</button>
+        <button class="category" data-category="rings">Rings</button>
+        <button class="category" data-category="invitations">Invitation Cards</button>
+        <button class="category" data-category="keytags">Key Tags</button>
+      </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="products-top">
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+          <h2 id="productTitle">All Products</h2>
+        </div>
+        <div class="product-tools">
+          <input id="searchInput" type="search" placeholder="Search products..." oninput="showProducts()"
+            aria-label="Search products">
+          <span id="productCount">20 products</span>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p id="emptyState" class="empty-state hidden">No products found. Try another search.</p>
+    </section>
+
+    <section class="features">
+      <div><span>✨</span>
+        <h3>Custom Designs</h3>
+        <p>Personalize your products.</p>
+      </div>
+      <div><span>🚚</span>
+        <h3>Easy Ordering</h3>
+        <p>Simple and convenient.</p>
+      </div>
+      <div><span>💝</span>
+        <h3>Made With Care</h3>
+        <p>Perfect for every occasion.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h2>Let's create something special.</h2>
+        <p>Have a custom request? Contact AM Creative and tell us what you need.</p>
+      </div>
+      <a class="contact-btn" href="#products">Explore Products →</a>
+      
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo">AM<span>Creative</span></div>
+    <p>© 2026 AM Creative. All rights reserved.</p>
+  </footer>
+
+  <!-- Product details modal -->
+  <div class="modal hidden" id="productModal" onclick="closeProductOnBackdrop(event)">
+    <div class="modal-box product-modal-box">
+      <button class="close" onclick="closeProduct()" aria-label="Close">×</button>
+      <div class="modal-product-image" id="modalImageArea"></div>
+      <div class="modal-product-info">
+        <p class="product-category" id="modalCategory"></p>
+        <h2 id="modalName"></h2>
+        <p id="modalDescription"></p>
+        <h3 class="modal-price" id="modalPrice"></h3>
+        <div class="modal-actions">
+          <button class="add-btn" id="modalAddButton">Add to Cart</button>
+          <a class="contact-btn" id="modalWhatsapp" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping cart modal -->
+  <div class="modal hidden" id="cartModal" onclick="closeCartOnBackdrop(event)">
+    <div class="modal-box">
+      <button class="close" onclick="closeCart()" aria-label="Close">×</button>
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <div class="cart-total">Total: <strong id="cartTotal">Rs. 0</strong></div>
+      <a class="checkout-btn" id="cartWhatsapp" href="#" target="_blank" rel="noopener">Order through WhatsApp</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
