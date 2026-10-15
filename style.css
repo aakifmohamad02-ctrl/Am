@@ -132,6 +132,9 @@ body {
     height: 420px;
     position: relative;
 }
+footer .about-dev{
+color: var(--accent);
+}
 
 .hero-image img {
     width: 100%;
